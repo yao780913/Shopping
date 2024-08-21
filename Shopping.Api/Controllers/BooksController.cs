@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Shopping.Contracts.Books;
 
 namespace Shopping.Api.Controllers;
 [ApiController]
@@ -28,11 +29,4 @@ public class BooksController : ControllerBase
     {
         throw new NotImplementedException();
     }
-    
-    
-    
-    
-    
 }
-
-public class SearchBooksRequest { }

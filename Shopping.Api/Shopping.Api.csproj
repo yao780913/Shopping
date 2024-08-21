@@ -17,4 +17,8 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Shopping.Contracts\Shopping.Contracts.csproj" />
+    </ItemGroup>
+
 </Project>

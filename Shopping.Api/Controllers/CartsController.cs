@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Shopping.Contracts.Carts;
 
 namespace Shopping.Api.Controllers;
 
@@ -30,5 +31,3 @@ public class CartsController:ControllerBase
         throw new NotImplementedException();
     }
 }
-
-public class AddItemToCartRequest { }
