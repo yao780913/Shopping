@@ -9,3 +9,26 @@ https://www.youtube.com/watch?v=V-FCYGW0IuM
         <Protobuf Include="proto\{yourfile}.proto" GrpcServices="Client" />
     </ItemGroup>
     ```
+#### How to generate client in other project
+1. copy the `proto` directory to the other project
+2. open file `.csproj`
+3. install packages
+   - `Grpc.Tools`
+   - `Google.Protobuf`
+   - `Grpc.Net.ClientFactory`
+4. Add the following code to the file
+    ```xml
+    <ItemGroup>
+        <Protobuf Include="proto\{yourfile}.proto" GrpcServices="Client" />
+    </ItemGroup>
+    ```
+5. initialize the client
+   ```csharp
+   var channel = GrpcChannel.ForAddress("https://localhost:5001");
+   var client = new Greeter.GreeterClient(channel);
+   ```
+6. call the service
+   ```csharp
+   var reply = await client.SayHelloAsync(new HelloRequest { Name = "GreeterClient" });
+   Console.WriteLine("Greeting: " + reply.Message);
+   ```

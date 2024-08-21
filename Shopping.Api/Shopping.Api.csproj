@@ -8,7 +8,17 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Google.Protobuf" Version="3.23.1" />
+        <PackageReference Include="Grpc.Net.ClientFactory" Version="2.57.0" />
+        <PackageReference Include="Grpc.Tools" Version="2.65.0">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Protobuf Include="Protos\test.proto" GrpcServices="Client"/>
     </ItemGroup>
 
     <ItemGroup>
@@ -20,5 +30,4 @@
     <ItemGroup>
       <ProjectReference Include="..\Shopping.Contracts\Shopping.Contracts.csproj" />
     </ItemGroup>
-
 </Project>

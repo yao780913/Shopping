@@ -2,6 +2,7 @@
 using Shopping.Contracts.Books;
 
 namespace Shopping.Api.Controllers;
+
 [ApiController]
 [Route("[controller]")]
 public class BooksController : ControllerBase
