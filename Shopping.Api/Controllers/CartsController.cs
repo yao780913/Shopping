@@ -8,25 +8,15 @@ namespace Shopping.Api.Controllers;
 public class CartsController : ApiController
 {
     [HttpGet("{cartId}")]
+    [ProducesResponseType<GetCartDetailResponse>(200)]
     public Task<IActionResult> GetCart(string cartId)
     {
         throw new NotImplementedException();
     }
     
-    [HttpPost("{cartId}/addItem")]
-    public Task<IActionResult> AddItemToCart(string cartId, [FromBody] AddItemToCartRequest request)
-    {
-        throw new NotImplementedException();
-    }
-    
-    [HttpDelete("{cartId}")]
-    public Task<IActionResult> ClearCart(string cartId)
-    {
-        throw new NotImplementedException();
-    }
-    
-    [HttpDelete("{cartId}/items/{cartItemId}")]
-    public Task<IActionResult> RemoveItemFromCart(string cartId, string cartItemId)
+    [HttpPost]
+    [ProducesResponseType<CreateCartResponse>(201)]
+    public Task<IActionResult> CreateCart([FromBody] CreateCartRequest request)
     {
         throw new NotImplementedException();
     }
