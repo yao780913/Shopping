@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping.Api", "Shopping.Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping.Contracts", "Shopping.Contracts\Shopping.Contracts.csproj", "{BD52D7AD-D935-40B8-B8E5-E1D814D035BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payment.gRPC", "Payment.gRPC\Payment.gRPC.csproj", "{FD89F9EC-7BB6-430F-9906-42DFE4AF1F0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{BD52D7AD-D935-40B8-B8E5-E1D814D035BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD52D7AD-D935-40B8-B8E5-E1D814D035BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD52D7AD-D935-40B8-B8E5-E1D814D035BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD89F9EC-7BB6-430F-9906-42DFE4AF1F0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD89F9EC-7BB6-430F-9906-42DFE4AF1F0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD89F9EC-7BB6-430F-9906-42DFE4AF1F0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD89F9EC-7BB6-430F-9906-42DFE4AF1F0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
