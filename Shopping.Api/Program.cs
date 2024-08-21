@@ -1,6 +1,6 @@
-using Project.Infrastructure;
 using Shopping.Api;
 using Shopping.Application;
+using Shopping.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 {
@@ -17,6 +17,7 @@ var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 {
     app.UseExceptionHandler();
+    app.AddInfrastructureMiddleware();
     
     if (app.Environment.IsDevelopment())
     {

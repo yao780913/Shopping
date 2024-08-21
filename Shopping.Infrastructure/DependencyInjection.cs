@@ -9,8 +9,9 @@ using Shopping.Application.Common.Interfaces;
 using Shopping.Domain.Common.Interfaces;
 using Shopping.Infrastructure.Authentication.PasswordEncrpytion;
 using Shopping.Infrastructure.Authentication.TokenGenerator;
+using Shopping.Infrastructure.Common.Persistence;
 
-namespace Project.Infrastructure;
+namespace Shopping.Infrastructure;
 
 public static class DependencyInjection
 {
@@ -30,7 +31,7 @@ public static class DependencyInjection
         services.AddDbContext(connectionString);
         services.AddRepositories();
 
-        // services.AddScoped<IUnitOfWork>(serviceProvider => serviceProvider.GetRequiredService<GymManagementDbContext>());
+        services.AddScoped<IUnitOfWork>(serviceProvider => serviceProvider.GetRequiredService<ShoppingDbContext>());
         
         return services;
     }
@@ -38,8 +39,8 @@ public static class DependencyInjection
         
     private static IServiceCollection AddDbContext (this IServiceCollection services, string connectionString)
     {
-        // services.AddDbContext<GymManagementDbContext>(options =>
-        //     options.UseSqlite(connectionString));
+        services.AddDbContext<ShoppingDbContext>(options =>
+            options.UseSqlite(connectionString));
         
         return services;
     }
