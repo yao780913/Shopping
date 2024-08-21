@@ -5,7 +5,7 @@ namespace Shopping.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class CartsController:ControllerBase
+public class CartsController : ApiController
 {
     [HttpGet("{cartId}")]
     public Task<IActionResult> GetCart(string cartId)

@@ -5,7 +5,7 @@ namespace Shopping.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class BooksController : ControllerBase
+public class BooksController : ApiController
 {
     [HttpGet]
     public async Task<IActionResult> ListBooks ()

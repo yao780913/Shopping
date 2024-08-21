@@ -5,7 +5,7 @@ using Shopping.Contracts.Payments;
 
 namespace Shopping.Api.Controllers;
 
-public class PaymentsController : ControllerBase
+public class PaymentsController : ApiController
 {
     public PaymentsController ()
     {

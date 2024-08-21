@@ -6,6 +6,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping.Contracts", "Shopp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payment.gRPC", "Payment.gRPC\Payment.gRPC.csproj", "{FD89F9EC-7BB6-430F-9906-42DFE4AF1F0D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping.Application", "Shopping.Application\Shopping.Application.csproj", "{1EDD1AB5-DBD6-48F3-852C-E89658CE67C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping.Domain", "Shopping.Domain\Shopping.Domain.csproj", "{2859706A-2DA9-47D7-943F-7CB4971A3299}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping.Infrastructure", "Shopping.Infrastructure\Shopping.Infrastructure.csproj", "{CEB8BFF6-3183-4929-986F-B4F17F146D06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +30,17 @@ Global
 		{FD89F9EC-7BB6-430F-9906-42DFE4AF1F0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD89F9EC-7BB6-430F-9906-42DFE4AF1F0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD89F9EC-7BB6-430F-9906-42DFE4AF1F0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EDD1AB5-DBD6-48F3-852C-E89658CE67C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EDD1AB5-DBD6-48F3-852C-E89658CE67C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EDD1AB5-DBD6-48F3-852C-E89658CE67C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EDD1AB5-DBD6-48F3-852C-E89658CE67C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2859706A-2DA9-47D7-943F-7CB4971A3299}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2859706A-2DA9-47D7-943F-7CB4971A3299}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2859706A-2DA9-47D7-943F-7CB4971A3299}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2859706A-2DA9-47D7-943F-7CB4971A3299}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEB8BFF6-3183-4929-986F-B4F17F146D06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEB8BFF6-3183-4929-986F-B4F17F146D06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEB8BFF6-3183-4929-986F-B4F17F146D06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEB8BFF6-3183-4929-986F-B4F17F146D06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,26 +1,32 @@
+using Project.Infrastructure;
+using Shopping.Api;
+using Shopping.Application;
+
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
-builder.Services.AddControllers();
-
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    builder.AddConfigurations();
+    
+    var connectionString = builder.Configuration.GetConnectionString("ConnStr");
+    
+    builder.Services
+        .AddPresentation()
+        .AddApplication()
+        .AddInfrastructure(builder.Configuration, connectionString);
 }
 
-app.UseHttpsRedirection();
+var app = builder.Build();
+{
+    app.UseExceptionHandler();
+    
+    if (app.Environment.IsDevelopment())
+    {
+        app.UseSwagger();
+        app.UseSwaggerUI();
+    }
 
-app.UseAuthorization();
+    app.UseHttpsRedirection();
+    app.UseAuthorization();
+    app.MapControllers();
 
-app.MapControllers();
-
-app.Run();
+    app.Run();
+}
