@@ -1,3 +1,3 @@
 ﻿namespace Shopping.Contracts.Payments;
 
-public class PaymentCheckoutRequest { }
+public record PaymentCheckoutRequest(Guid CartId, decimal Amount);
