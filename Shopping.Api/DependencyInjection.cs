@@ -19,8 +19,20 @@ public static class DependencyInjection
         return builder;
 
     }
+
+    public static IServiceCollection AddHttpClient (this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddHttpClient(
+            "A",
+            opt =>
+            {
+                opt.BaseAddress = new Uri(configuration["ServiceA:BaseUrl"]);
+            });
+        
+        return services;
+    }
     
-    public static IServiceCollection AddPresentation(this IServiceCollection services)
+    public static IServiceCollection AddPresentation (this IServiceCollection services, IConfiguration configuration)
     {
         services.AddControllers()
             .AddJsonOptions(options =>
@@ -30,11 +42,14 @@ public static class DependencyInjection
                 options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
                 options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
             });
+
+        services
+            .AddEndpointsApiExplorer()
+            .AddSwagger()
+            .AddProblemDetails()
+            .AddHttpContextAccessor();
         
-        services.AddEndpointsApiExplorer();
-        services.AddSwagger();
-        services.AddProblemDetails();
-        services.AddHttpContextAccessor();
+        services.AddHttpClient(configuration);
         
         // TODO: Add the CurrentUserProvider service
         // services.AddScoped<ICurrentUserProvider, CurrentUserProvider>();

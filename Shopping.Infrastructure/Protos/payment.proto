@@ -1,0 +1,28 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Payment.gRPC";
+
+package payment;
+
+service Cashier {
+  rpc Checkout (PaymentRequest) returns (PaymentReply);
+}
+
+message PaymentRequest {
+  string merchantTradeNo = 1;
+  int32 totalAmount = 2;
+  string tradeDesc = 3;
+  string itemName = 4;
+  string returnUrl = 5;
+}
+
+message PaymentReply {
+  PaymentResult result = 1;
+  string message = 2;
+}
+
+enum PaymentResult {
+  Success = 0;
+  Failed = 1;
+  Error = 2;
+}

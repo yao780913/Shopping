@@ -5,11 +5,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Payment.gRPC;
 using Shopping.Application.Common.Interfaces;
 using Shopping.Domain.Common.Interfaces;
 using Shopping.Infrastructure.Authentication.PasswordEncrpytion;
 using Shopping.Infrastructure.Authentication.TokenGenerator;
 using Shopping.Infrastructure.Common.Persistence;
+using Shopping.Infrastructure.Payment;
 
 namespace Shopping.Infrastructure;
 
@@ -21,9 +23,28 @@ public static class DependencyInjection
         string connectionString)
     {
         return services
+            .AddServices()
+            .AddGrpcClients(configuration)
             .AddAuthentication(configuration)
             .AddPasswordEncryption(configuration)
             .AddPersistence(connectionString);
+    }
+
+    private static IServiceCollection AddServices (this IServiceCollection services)
+    {
+        services.AddScoped<IPaymentService, PaymentService>();
+
+        return services;
+    }
+    
+    private static IServiceCollection AddGrpcClients (this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddGrpcClient<Cashier.CashierClient>(opt =>
+        {
+            opt.Address = new Uri("https://localhost:5001");
+        });
+        
+        return services;
     }
     
     private static IServiceCollection AddPersistence (this IServiceCollection services, string connectionString)
@@ -83,7 +104,6 @@ public static class DependencyInjection
     
     private static IServiceCollection AddRepositories (this IServiceCollection services)
     {
-        
         return services;
     }
 }

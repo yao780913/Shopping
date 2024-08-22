@@ -9,7 +9,7 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 app.MapGrpcService<GreeterService>();
-app.MapGrpcService<TesterService>();
+app.MapGrpcService<PaymentService>();
 app.MapGet(
     "/",
     () =>

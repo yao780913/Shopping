@@ -34,3 +34,13 @@ https://www.youtube.com/watch?v=V-FCYGW0IuM
    var reply = await client.SayHelloAsync(new HelloRequest { Name = "GreeterClient" });
    Console.WriteLine("Greeting: " + reply.Message);
    ```
+   
+#### Register gRPC clients
+https://learn.microsoft.com/en-us/aspnet/core/grpc/clientfactory?view=aspnetcore-8.0#register-grpc-clients
+
+```csharp
+builder.Services.AddGrpcClient<Greeter.GreeterClient>(o =>
+{
+    o.Address = new Uri("https://localhost:5001");
+});
+```

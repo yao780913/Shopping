@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
     var connectionString = builder.Configuration.GetConnectionString("ConnStr");
     
     builder.Services
-        .AddPresentation()
+        .AddPresentation(builder.Configuration)
         .AddApplication()
         .AddInfrastructure(builder.Configuration, connectionString);
 }
