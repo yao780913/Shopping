@@ -29,6 +29,7 @@ https://www.youtube.com/watch?v=V-FCYGW0IuM
    var channel = GrpcChannel.ForAddress("https://localhost:5001");
    var client = new Greeter.GreeterClient(channel);
    ```
+   
 6. call the service
    ```csharp
    var reply = await client.SayHelloAsync(new HelloRequest { Name = "GreeterClient" });
@@ -36,7 +37,7 @@ https://www.youtube.com/watch?v=V-FCYGW0IuM
    ```
    
 #### Register gRPC clients
-https://learn.microsoft.com/en-us/aspnet/core/grpc/clientfactory?view=aspnetcore-8.0#register-grpc-clients
+[microsoft docs](https://learn.microsoft.com/en-us/aspnet/core/grpc/clientfactory?view=aspnetcore-8.0#register-grpc-clients)
 
 ```csharp
 builder.Services.AddGrpcClient<Greeter.GreeterClient>(o =>
